@@ -2,7 +2,6 @@
 <%@ page import="com.gauhar.restaurant.model.*" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.text.NumberFormat" %>
-
 <%
     String ctx = request.getContextPath();
     Restaurant r = (Restaurant) request.getAttribute("restaurant");
@@ -12,13 +11,12 @@
 
     NumberFormat nf = NumberFormat.getNumberInstance(new Locale("ru", "KZ"));
 %>
-
 <!doctype html>
 <html lang="kk">
 <head>
     <meta charset="UTF-8">
     <title>Menu</title>
-    <link rel="stylesheet" href="<%=ctx%>/assets/styles.css">
+    <link rel="stylesheet" href="<%=ctx%>/styles.css">
 </head>
 <body>
 
@@ -121,20 +119,16 @@
                             <div class="menu-category">
                                 <%= (m.getCategory() == null || m.getCategory().isBlank()) ? "No category" : m.getCategory() %>
                             </div>
-
                             <div class="menu-row">
                                 <span class="menu-price"><%= nf.format(m.getPrice()) %> ₸</span>
-
                                 <% if (m.isAvailable()) { %>
                                 <span class="menu-badge ok">Available</span>
                                 <% } else { %>
                                 <span class="menu-badge no">Not available</span>
                                 <% } %>
                             </div>
-
                             <div class="menu-actions">
                                 <a class="btn small ghost" href="<%=ctx%>/menu/edit?id=<%=m.getId()%>">✏️ Edit</a>
-
                                 <form method="post" action="<%=ctx%>/menu/delete"
                                       onsubmit="return confirm('Delete this item?');">
                                     <input type="hidden" name="id" value="<%=m.getId()%>">
@@ -150,6 +144,5 @@
         </div>
     </div>
 </div>
-
 </body>
 </html>

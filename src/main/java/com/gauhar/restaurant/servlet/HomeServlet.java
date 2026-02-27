@@ -16,7 +16,6 @@ public class HomeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        // restaurant object application scope-та тұрса, request-ке салып береміз
         Restaurant r = (Restaurant) getServletContext().getAttribute(CTX_KEY);
         req.setAttribute("restaurant", r);
 

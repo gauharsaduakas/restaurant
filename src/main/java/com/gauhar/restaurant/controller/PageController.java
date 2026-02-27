@@ -35,6 +35,6 @@ public class PageController {
     @GetMapping("/")
     public String home(Model model) {
         model.addAttribute("restaurant", getOrInit());
-        return "index"; // -> /WEB-INF/views/index.jsp
+        return "index";
     }
 }

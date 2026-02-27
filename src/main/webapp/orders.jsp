@@ -6,7 +6,7 @@
     String ctx = request.getContextPath();
 
     Restaurant r = (Restaurant) request.getAttribute("restaurant");
-    String restaurantName = (r != null && r.getName() != null) ? r.getName() : "Restaurant";
+    String restaurantName = (r != null && r.getName() != null) ? r.getName() : "Gauhar Restaurant";
 
     List<Order> orders = (List<Order>) request.getAttribute("orders");
     if (orders == null) orders = new ArrayList<>();
@@ -16,138 +16,132 @@
 
     double revenue = 0.0;
     for (Order o : orders) {
-        if (o != null) revenue += o.getTotalAmount();
+        if (o == null) continue;
+        try { revenue += o.getTotalAmount(); } catch (Exception ignored) {}
     }
 %>
 
 <!doctype html>
-<html lang="kk">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Orders</title>
-    <link rel="stylesheet" href="<%=ctx%>/assets/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Заказы — <%= restaurantName %></title>
+    <link rel="stylesheet" href="<%= ctx %>/styles.css">
 </head>
 <body>
 
 <div class="navbar">
     <div class="nav-inner">
-        <a class="brand" href="<%=ctx%>/">
-            <span class="logo"></span>
-            Restaurant System
-        </a>
+        <a class="brand" href="<%= ctx %>/">🌿 <%= restaurantName %></a>
         <div class="nav-links">
-            <a class="nav-link" href="<%=ctx%>/menu">Menu</a>
-            <a class="nav-link active" href="<%=ctx%>/orders">Orders</a>
+            <a class="nav-link" href="<%= ctx %>/menu-items">Меню</a>
+            <a class="nav-link active" href="<%= ctx %>/orders">Заказы</a>
+            <a class="nav-link" href="<%= ctx %>/kitchen">Кухня</a>
+            <a class="nav-link" href="<%= ctx %>/restaurant">О ресторане</a>
         </div>
     </div>
 </div>
 
-<div class="container">
-    <div class="card">
-        <div class="card-title">
-            <div>
-                <h2>Orders</h2>
-                <p class="sub"><%= restaurantName %> — тапсырыстар</p>
-            </div>
-            <div class="kpi">
-                <span class="badge">Orders: <%= orders.size() %></span>
-                <span class="badge">Revenue: <%= revenue %> ₸</span>
-            </div>
+<div class="page-wrapper">
+
+    <div class="page-header-bar">
+        <div>
+            <div class="page-title">🧾 Заказы</div>
+            <div style="color:#8aaa6a;font-size:13px"><%= restaurantName %> — тапсырыстар</div>
         </div>
-
-        <div class="grid two">
-
-            <!-- CREATE ORDER -->
-            <div class="card">
-                <h3>Create Order</h3>
-                <div class="hr"></div>
-
-                <form method="post" action="<%=ctx%>/orders">
-                    <div class="form-row">
-                        <label>Customer</label>
-                        <input name="customerName" placeholder="e.g. Ali" required>
-                    </div>
-
-                    <div class="form-row">
-                        <label>Menu item</label>
-                        <select name="menuItemId" required>
-                            <% for (MenuItem m : menu) { %>
-                            <option value="<%=m.getId()%>">
-                                <%=m.getName()%> — <%=m.getPrice()%> ₸
-                            </option>
-                            <% } %>
-                        </select>
-                    </div>
-
-                    <div class="form-row">
-                        <label>Quantity</label>
-                        <input name="quantity" type="number" min="1" value="1" required>
-                    </div>
-
-                    <div class="actions">
-                        <button class="btn primary" type="submit">Create Order</button>
-                        <a class="btn ghost" href="<%=ctx%>/menu">Back to Menu</a>
-                    </div>
-                </form>
-            </div>
-
-            <!-- ORDERS LIST -->
-            <div class="card">
-                <h3>Orders List</h3>
-                <div class="hr"></div>
-
-                <% if (orders.isEmpty()) { %>
-                <div class="empty">Әзірге тапсырыс жоқ</div>
-                <% } else { %>
-                <div class="table-wrap">
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Customer</th>
-                            <th>Items</th>
-                            <th class="right">Total</th>
-                            <th>Status</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-
-                        <% for (Order o : orders) { %>
-                        <tr>
-                            <td>#<%=o.getId()%></td>
-                            <td><%=o.getCustomerName()%></td>
-                            <td>
-                                <% if (o.getItems() == null || o.getItems().isEmpty()) { %>
-                                <div class="muted">No items</div>
-                                <% } else { %>
-                                <% for (OrderItem oi : o.getItems()) { %>
-                                <div>
-                                    <%= oi.getMenuItem() != null ? oi.getMenuItem().getName() : "Unknown" %>
-                                    × <%= oi.getQuantity() %>
-                                </div>
-                                <% } %>
-                                <% } %>
-                            </td>
-                            <td class="right"><%=o.getTotalAmount()%> ₸</td>
-                            <td><%=o.getStatus()%></td>
-                        </tr>
-                        <% } %>
-
-                        </tbody>
-                    </table>
-                </div>
-                <% } %>
-
-                <div class="hr"></div>
-                <div class="actions">
-                    <a class="btn ghost" href="<%=ctx%>/">Home</a>
-                    <a class="btn primary" href="<%=ctx%>/menu">Add MenuItem</a>
-                </div>
-            </div>
-
+        <div style="text-align:right;color:#8aaa6a;font-size:13px">
+            Orders: <%= orders.size() %><br>
+            Revenue: <%= (int) revenue %> ₸
         </div>
     </div>
-</div>
 
+    <div class="form-card" style="margin-bottom:20px;">
+        <div class="form-card-header">
+            <div class="section-title" style="margin:0;">➕ Create Order</div>
+        </div>
+
+        <form method="post" action="<%= ctx %>/orders">
+            <div class="order-form-grid">
+                <div class="form-row">
+                    <input name="customerName" placeholder="Customer (e.g. Ali)" required>
+                </div>
+
+                <div class="form-row">
+                    <select name="menuItemId" required>
+                        <% if (menu.isEmpty()) { %>
+                        <option value="" disabled selected>Нет блюд в меню</option>
+                        <% } else { for (MenuItem m : menu) { %>
+                        <option value="<%= m.getId() %>">
+                            <%= m.getName() %> — <%= (int) m.getPrice() %> ₸
+                        </option>
+                        <% }} %>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <input name="quantity" type="number" min="1" value="1" required>
+                </div>
+
+                <div class="form-row">
+                    <button class="btn primary full-width" type="submit"
+                            <%= menu.isEmpty() ? "disabled" : "" %>>
+                        ✅ Create Order
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <div class="actions-inline" style="margin-top:12px;">
+            <a class="btn ghost" href="<%= ctx %>/menu-items">⬅ Back to Menu</a>
+            <a class="btn ghost" href="<%= ctx %>/">🏠 Home</a>
+        </div>
+    </div>
+
+    <!-- ORDERS LIST -->
+    <div class="orders-table-wrap">
+        <table class="orders-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Customer</th>
+                <th>Items</th>
+                <th>Total</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <% if (orders.isEmpty()) { %>
+            <tr>
+                <td class="empty-td" colspan="5">Әзірге тапсырыс жоқ</td>
+            </tr>
+            <% } else { for (Order o : orders) {
+                List<OrderItem> its = (o.getItems() != null) ? o.getItems() : Collections.emptyList();
+                double total = 0;
+                try { total = o.getTotalAmount(); } catch (Exception ignored) {}
+            %>
+            <tr>
+                <td>#<%= o.getId() %></td>
+                <td><%= o.getCustomerName() %></td>
+                <td>
+                    <% if (its.isEmpty()) { %>
+                    <span style="color:#8aaa6a;">No items</span>
+                    <% } else { for (OrderItem oi : its) { %>
+                    <div>
+                        <%= (oi.getMenuItem() != null ? oi.getMenuItem().getName() : "Unknown") %>
+                        × <%= oi.getQuantity() %>
+                    </div>
+                    <% }} %>
+                </td>
+                <td><%= (int) total %> ₸</td>
+                <td><%= o.getStatus() %></td>
+            </tr>
+            <% }} %>
+            </tbody>
+        </table>
+    </div>
+
+</div>
 </body>
 </html>

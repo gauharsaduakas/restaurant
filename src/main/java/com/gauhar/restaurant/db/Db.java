@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class Db {
 
     private static final String URL =
-            "jdbc:sqlserver://localhost:1433;databaseName=restaurant_dbb;encrypt=true;trustServerCertificate=true";
+            "jdbc:sqlserver://localhost:1433;databaseName=restaurant_dbb;encrypt=false;trustServerCertificate=true";
     private static final String USER = "sa";
     private static final String PASS = "ыф";
 

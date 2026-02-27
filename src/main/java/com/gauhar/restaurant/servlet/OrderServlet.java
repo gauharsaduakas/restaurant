@@ -28,7 +28,6 @@ public class OrderServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         String path = req.getServletPath();
 
-        // CREATE ORDER
         if ("/orders".equals(path)) {
             String customer = safe(req.getParameter("customerName"));
             String phone    = safe(req.getParameter("phone"));
@@ -50,7 +49,6 @@ public class OrderServlet extends HttpServlet {
             return;
         }
 
-        // CHANGE STATUS
         if ("/orders/status".equals(path)) {
             int orderId = parseInt(req.getParameter("id"), -1);
             String statusStr = safe(req.getParameter("status"));

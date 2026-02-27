@@ -24,7 +24,7 @@ public class AppStore {
     }
 
 
-    // Restaurant
+
     public static Restaurant getRestaurant() {
         return restaurant;
     }
@@ -35,17 +35,14 @@ public class AppStore {
         restaurant.setPhone(phone);
     }
 
-    // MenuItem CRUD
     public static List<MenuItem> getMenuItems() {
         return menuItems;
     }
 
-    // NEW method (with imageUrl)
     public static void addMenuItem(String name, String category, double price, boolean available, String imageUrl) {
         menuItems.add(new MenuItem(menuSeq++, name, category, price, available, imageUrl));
     }
 
-    // Backward compatibility (old call still works)
     public static void addMenuItem(String name, String category, double price, boolean available) {
         addMenuItem(name, category, price, available, "");
     }
@@ -54,7 +51,6 @@ public class AppStore {
         return menuItems.stream().filter(m -> m.getId() == id).findFirst();
     }
 
-    // NEW method (with imageUrl)
     public static boolean updateMenuItem(int id, String name, String category, double price, boolean available, String imageUrl) {
         Optional<MenuItem> opt = findMenuItem(id);
         if (opt.isEmpty()) return false;
@@ -68,7 +64,6 @@ public class AppStore {
         return true;
     }
 
-    // Backward compatibility
     public static boolean updateMenuItem(int id, String name, String category, double price, boolean available) {
         return updateMenuItem(id, name, category, price, available, "");
     }
@@ -77,7 +72,6 @@ public class AppStore {
         return menuItems.removeIf(m -> m.getId() == id);
     }
 
-    // Orders
     public static List<Order> getOrders() {
         return orders;
     }

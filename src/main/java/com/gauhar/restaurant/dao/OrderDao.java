@@ -11,7 +11,6 @@ public class OrderDao {
 
     private final MenuItemDao menuItemDao = new MenuItemDao();
 
-    /** Создать заказ с позициями в одной транзакции */
     public Order createOrder(String customerName, String phone, int menuItemId, int qty) {
         String insertOrder = "INSERT INTO orders (customer_name, phone, status, created_at) " +
                              "VALUES (?, ?, ?, SYSUTCDATETIME())";
@@ -54,17 +53,14 @@ public class OrderDao {
         }
     }
 
-    /** Все заказы с позициями */
     public List<Order> findAll() {
         return findByStatuses(null);
     }
 
-    /** Заказы по одному статусу */
     public List<Order> findByStatus(OrderStatus status) {
         return findByStatuses(new OrderStatus[]{status});
     }
 
-    /** Заказы по нескольким статусам */
     public List<Order> findByStatuses(OrderStatus[] statuses) {
         StringBuilder sql = new StringBuilder(
             "SELECT o.id, o.customer_name, o.phone, o.status, o.created_at, " +
