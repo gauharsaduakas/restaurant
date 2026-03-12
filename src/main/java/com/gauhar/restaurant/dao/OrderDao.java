@@ -53,6 +53,14 @@ public class OrderDao {
         }
     }
 
+    public Order createOrder(Long userId, String customerName, String phone, int menuItemId, int qty) {
+        return createOrder(customerName, phone, menuItemId, qty);
+    }
+
+    public List<Order> findByUserId(Long userId) {
+        return findAll();
+    }
+
     public List<Order> findAll() {
         return findByStatuses(null);
     }

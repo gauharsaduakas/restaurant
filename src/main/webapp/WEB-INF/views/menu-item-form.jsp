@@ -1,8 +1,12 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="com.gauhar.restaurant.model.MenuItem" %>
+<%@ page import="com.gauhar.restaurant.model.Restaurant" %>
 <%
     String ctx  = request.getContextPath();
     String mode = (String) request.getAttribute("mode");
+
+    Restaurant _r = (Restaurant) request.getAttribute("restaurant");
+    String restaurantName = (_r != null && _r.getName() != null && !_r.getName().isBlank()) ? _r.getName() : "Gauhar Restaurant";
 
     MenuItem item = (MenuItem) request.getAttribute("item");
 
@@ -22,15 +26,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><%= title %></title>
+    <title><%= title %> — <%= restaurantName %></title>
     <link rel="stylesheet" href="<%= ctx %>/styles.css">
 </head>
 <body>
 
 <div class="navbar">
     <div class="nav-inner">
-        <a class="brand" href="<%= ctx %>/">🌿 Gauhar Restaurant</a>
+        <a class="brand" href="<%= ctx %>/home">🎍 <%= restaurantName %></a>
         <div class="nav-links">
+
             <a class="nav-link" href="<%= ctx %>/">Главная</a>
             <a class="nav-link active" href="<%= ctx %>/menu-items">Меню</a>
             <a class="nav-link" href="<%= ctx %>/orders">Заказы</a>

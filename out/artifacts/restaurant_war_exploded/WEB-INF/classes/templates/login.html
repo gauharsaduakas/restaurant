@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Вход — Gauhar Restaurant</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+
+<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;">
+    <div class="form-card" style="width:100%;max-width:420px;">
+
+        <div style="text-align:center;margin-bottom:28px;">
+            <div style="font-size:48px;margin-bottom:12px;">🎍</div>
+            <h1 style="font-size:22px;font-weight:800;color:var(--green);margin-bottom:4px;">Gauhar Restaurant</h1>
+            <p style="color:var(--sub);font-size:13px;">Войдите чтобы продолжить</p>
+        </div>
+
+        <!-- Ошибка авторизации -->
+        <div th:if="${param.error}" class="toast error" style="margin-bottom:16px;">
+            ❌ Неверный email или пароль
+        </div>
+
+        <!-- Успешная регистрация -->
+        <div th:if="${param.registered}" class="toast success" style="margin-bottom:16px;">
+            ✅ Аккаунт создан. Войдите.
+        </div>
+
+        <!-- Выход -->
+        <div th:if="${param.logout}" class="toast success" style="margin-bottom:16px;">
+            👋 Вы вышли из системы
+        </div>
+
+        <!-- Spring Security обрабатывает POST /login -->
+        <form method="post" th:action="@{/login}">
+            <!-- CSRF токен Spring Security -->
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+            <div class="form-row">
+                <input type="email" name="email" placeholder="Email" required autofocus>
+            </div>
+            <div class="form-row">
+                <input type="password" name="password" placeholder="Пароль" required>
+            </div>
+            <button class="btn primary full-width" type="submit">Войти</button>
+        </form>
+
+        <div style="margin-top:20px;text-align:center;color:var(--sub);font-size:13px;">
+            Нет аккаунта?
+            <a th:href="@{/register}" style="color:var(--green);text-decoration:underline;">Зарегистрироваться</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

@@ -48,7 +48,6 @@
         </div>
 
         <div class="grid two">
-            <!-- Add MenuItem -->
             <div class="card">
                 <h3>Add MenuItem</h3>
                 <p class="sub">doPost арқылы жаңа тағам қосылады</p>
@@ -90,7 +89,6 @@
                 </form>
             </div>
 
-            <!-- Menu Cards -->
             <div class="card">
                 <h3>Menu Items</h3>
                 <p class="sub">doGet арқылы тізім көрсетіледі</p>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${restaurantName} + ' — Главная'">Главная</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="nav-inner">
+        <a class="brand" th:href="@{/home}">🎍 <span th:text="${restaurantName}">Gauhar Restaurant</span></a>
+        <div class="nav-links">
+            <a class="nav-link active" th:href="@{/home}">Главная</a>
+            <a class="nav-link" th:href="@{/menu-items}">Меню</a>
+            <a class="nav-link" th:href="@{/orders}">Заказы</a>
+            <a class="nav-link" th:href="@{/kitchen}">Кухня</a>
+            <a class="nav-link" th:if="${role == 'ADMIN'}" th:href="@{/restaurant}">О ресторане</a>
+            <a class="nav-link" th:href="@{/logout}">Выход</a>
+        </div>
+    </div>
+</div>
+
+<div class="home-hero">
+    <div class="hero-logo">🎍</div>
+    <h1 class="hero-title" th:text="${restaurantName}">Gauhar Restaurant</h1>
+    <p class="hero-sub">
+        Добро пожаловать,
+        <strong th:text="${fullName}">User</strong>
+        · Роль:
+        <strong th:text="${role}">CLIENT</strong>
+    </p>
+
+    <div class="hero-tags">
+        <span class="hero-tag">🍔 Бургеры</span>
+        <span class="hero-tag">🍕 Пицца</span>
+        <span class="hero-tag">☕ Кофе</span>
+        <span class="hero-tag">🍰 Десерты</span>
+    </div>
+
+    <div class="hero-btns">
+        <a class="btn primary large" th:href="@{/menu-items}">📋 Меню</a>
+        <a class="btn ghost large"   th:href="@{/orders}">🧾 Заказы</a>
+    </div>
+
+    <div class="home-info-grid">
+        <div class="info-card">
+            <span class="info-icon">📍</span>
+            <div>
+                <div class="info-label">Адрес</div>
+                <div class="info-value" th:text="${restaurantAddress}">—</div>
+            </div>
+        </div>
+        <div class="info-card">
+            <span class="info-icon">🕐</span>
+            <div>
+                <div class="info-label">Режим работы</div>
+                <div class="info-value" th:text="${restaurantHours}">—</div>
+            </div>
+        </div>
+        <div class="info-card">
+            <span class="info-icon">📞</span>
+            <div>
+                <div class="info-label">Контакты</div>
+                <div class="info-value" th:text="${restaurantPhone}">—</div>
+            </div>
+        </div>
+        <div class="info-card">
+            <span class="info-icon">👨‍🍳</span>
+            <div>
+                <div class="info-label">Кухня</div>
+                <div class="info-value">
+                    <a class="link" th:href="@{/kitchen}">Табло кухни</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

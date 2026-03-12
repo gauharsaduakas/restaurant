@@ -33,7 +33,7 @@
 
 <div class="navbar">
     <div class="nav-inner">
-        <a class="brand" href="<%= ctx %>/">🌿 <%= restaurantName %></a>
+        <a class="brand" href="<%= ctx %>/home">🎍 <%= restaurantName %></a>
         <div class="nav-links">
             <a class="nav-link" href="<%= ctx %>/menu-items">Меню</a>
             <a class="nav-link active" href="<%= ctx %>/orders">Заказы</a>
@@ -98,7 +98,6 @@
         </div>
     </div>
 
-    <!-- ORDERS LIST -->
     <div class="orders-table-wrap">
         <table class="orders-table">
             <thead>
