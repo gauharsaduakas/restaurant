@@ -10,141 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ace390b2-f63d-44a9-852c-045b5196b917" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CART_SYSTEM_SETUP.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CHECKLIST.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CHECK_USERS_TABLE.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/COMPLETION_REPORT.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEPLOYMENT.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FINAL_CHECKLIST.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FIX_AMBIGUOUS_MAPPING.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FIX_NATIVE_ACCESS_WARNING.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IDE_SETUP.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PROJECT_SUMMARY.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QUICK_START.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/config/WebMvcConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/controller/AdminDashboardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/controller/CartController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/controller/EmailController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/controller/KitchenController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/controller/MenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/controller/ProfileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/controller/RestUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/controller/UserOrdersController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/dto/RegisterRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/dto/UserResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/entity/Burger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/entity/Drink.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/entity/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/entity/OrderItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/entity/Pizza.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/model/Cart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/model/CartItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/repository/OrderRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/service/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/service/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/schema-sqlserver.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/burger.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/coffee.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/hero-preview.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/pastas.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/pizza.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/sup.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/cart_bak.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/access-denied.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/create-user.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/dashboard.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/edit-user.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/menu-items.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/orders.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/statistics.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/user-detail.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/users.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cart.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/change-password.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/includes/flash.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/includes/footer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/includes/navbar.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/menu-shop.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/my-orders.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/order-detail.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/order-success.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/profile.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/images/burger.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/images/coffee.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/images/cola.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/images/hero-preview.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/images/pastas.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/images/pizza.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/images/placeholder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/images/ponshik.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/images/sup.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_urls.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/RestaurantApplication.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/RestaurantApplication.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/CreateAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/CreateAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/api/MenuApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/api/MenuApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/api/OrdersApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/api/OrdersApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/controller/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/controller/PageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/controller/RestaurantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/controller/RestaurantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/dao/MenuItemDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/dao/MenuItemDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/dao/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/dao/RestaurantDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/dao/RestaurantDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/db/Db.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/db/Db.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/model/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/model/MenuItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/model/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/model/OrderItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/security/AdminInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/security/AdminInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/security/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/security/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/servlet/KitchenServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/servlet/KitchenServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/servlet/MenuItemServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/servlet/MenuItemServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/servlet/OrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/servlet/OrderServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/servlet/RestaurantServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/servlet/RestaurantServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/store/AppStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/store/AppStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/util/SecurityUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/util/SecurityUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/kitchen.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/kitchen.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/menu-item-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/menu-item-form.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/menu-items.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/menu-items.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/orders.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/restaurant.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/restaurant.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/start.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/start.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/img/burger.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/img/coffee.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/img/cola.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/cola.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/img/pastas.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/img/pizza.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/img/placeholder.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/placeholder.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/img/ponshik.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/ponshik.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/img/sup.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index_old.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index_old.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/menu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/orders.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/config/StaticConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gauhar/restaurant/config/WebConfig.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +111,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Madiyar/IdeaProjects/restaurant/src/main/resources/static",
+    "last_opened_file_path": "C:/Users/Madiyar/IdeaProjects/restaurant",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -461,7 +328,7 @@
       <workItem from="1777220593693" duration="3300000" />
       <workItem from="1777224822089" duration="842000" />
       <workItem from="1777394545067" duration="1931000" />
-      <workItem from="1777396723117" duration="15044000" />
+      <workItem from="1777396723117" duration="15445000" />
     </task>
     <servers />
   </component>
