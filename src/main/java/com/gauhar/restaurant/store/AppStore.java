@@ -80,7 +80,7 @@ public class AppStore {
         if (quantity <= 0) throw new IllegalArgumentException("Quantity must be > 0");
         MenuItem item = findMenuItem(menuItemId).orElseThrow();
         Order order = new Order(orderSeq++, customerName, "", OrderStatus.PENDING, java.time.LocalDateTime.now());
-        order.getItems().add(new OrderItem(item, quantity));
+        order.getItems().add(new OrderItem(item, quantity, new ArrayList<>()));
         orders.add(order);
     }
 

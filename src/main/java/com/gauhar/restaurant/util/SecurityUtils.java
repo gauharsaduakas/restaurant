@@ -1,6 +1,6 @@
 package com.gauhar.restaurant.util;
+import com.gauhar.restaurant.entity.User;
 
-import com.gauhar.restaurant.model.User;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Component;

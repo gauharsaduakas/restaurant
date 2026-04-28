@@ -5,7 +5,7 @@
 
     Restaurant r = (Restaurant) request.getAttribute("restaurant");
 
-    String name      = (r != null && r.getName() != null) ? r.getName() : "Gauhar Restaurant";
+    String name      = (r != null && r.getName() != null) ? r.getName() : "Restaurant";
     String address   = (r != null && r.getAddress() != null) ? r.getAddress() : "Astana, Kabanbay Batyr 53";
     String phone     = (r != null && r.getPhone() != null) ? r.getPhone() : "+7 700 000 00 00";
     String workHours = (r != null && r.getWorkHours() != null) ? r.getWorkHours() : "10:00 – 23:00";

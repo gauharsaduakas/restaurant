@@ -12,7 +12,11 @@ import java.util.Map;
 @RequestMapping("/api/menu-items")
 public class MenuApiController {
 
-    private final MenuItemDao dao = new MenuItemDao();
+    private final MenuItemDao dao;
+
+    public MenuApiController(MenuItemDao dao) {
+        this.dao = dao;
+    }
 
     @GetMapping
     public List<MenuItem> all() {

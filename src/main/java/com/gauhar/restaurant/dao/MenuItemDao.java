@@ -7,7 +7,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class MenuItemDao {
 
     public List<MenuItem> findAll() {
@@ -98,6 +100,10 @@ public class MenuItemDao {
         } catch (SQLException e) {
             throw new RuntimeException("MenuItemDao.delete failed", e);
         }
+    }
+
+    public MenuItem getMenuItemById(Long id) {
+        return findById(id.intValue()).orElse(null);
     }
 
     private MenuItem map(ResultSet rs) throws SQLException {

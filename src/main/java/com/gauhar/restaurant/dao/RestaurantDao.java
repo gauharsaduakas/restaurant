@@ -2,9 +2,10 @@ package com.gauhar.restaurant.dao;
 
 import com.gauhar.restaurant.db.Db;
 import com.gauhar.restaurant.model.Restaurant;
-
+import org.springframework.stereotype.Repository;
 import java.sql.*;
 
+@Repository
 public class RestaurantDao {
 
     public Restaurant findById(int id) {
@@ -53,12 +54,20 @@ public class RestaurantDao {
         }
     }
 
+    public void save(Restaurant r) {
+        if (findById(r.getId()) != null) {
+            update(r);
+        } else {
+            insert(r);
+        }
+    }
+
     public Restaurant getOrCreateDefault() {
         Restaurant r = findById(1);
         if (r == null) {
             r = new Restaurant();
             r.setId(1);
-            r.setName("Gauhar Restaurant");
+            r.setName("Restaurant");
             r.setAddress("Astana, Kabanbay Batyr 53");
             r.setPhone("+7 700 000 00 00");
             r.setWorkHours("10:00 - 23:00");

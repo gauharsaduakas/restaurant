@@ -1,11 +1,28 @@
 package com.gauhar.restaurant.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "menu_items")
 public class MenuItem {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "name", nullable = false)
     private String name;
+
+    @Column(name = "category")
     private String category;
+
+    @Column(name = "price", nullable = false)
     private double price;
+
+    @Column(name = "available")
     private boolean available;
+
+    @Column(name = "image_url")
     private String imageUrl;
 
     public MenuItem(int id, String name, String category, double price, boolean available) {
@@ -21,50 +38,24 @@ public class MenuItem {
         this.imageUrl = imageUrl == null ? "" : imageUrl.trim();
     }
 
-    public int getId() {
-        return id;
-    }
+    public MenuItem() {}
 
-    public String getName() {
-        return name;
-    }
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
 
-    public String getCategory() {
-        return category;
-    }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
-    public double getPrice() {
-        return price;
-    }
+    public String getCategory() { return category; }
+    public void setCategory(String category) { this.category = category; }
 
-    public boolean isAvailable() {
-        return available;
-    }
+    public double getPrice() { return price; }
+    public void setPrice(double price) { this.price = price; }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
+    public boolean isAvailable() { return available; }
+    public void setAvailable(boolean available) { this.available = available; }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public void setAvailable(boolean available) {
-        this.available = available;
-    }
-
+    public String getImageUrl() { return imageUrl; }
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl == null ? "" : imageUrl.trim();
     }

@@ -15,13 +15,13 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(urlPatterns = {"/orders", "/orders/status"})
+//@WebServlet(urlPatterns = {"/orders", "/orders/status"})
 public class OrderServlet extends HttpServlet {
 
     private static final String CTX_RESTAURANT_KEY = "restaurant";
 
     private final MenuItemDao menuItemDao = new MenuItemDao();
-    private final OrderDao orderDao = new OrderDao();
+    private final OrderDao orderDao = new OrderDao(new MenuItemDao());
     private final RestaurantDao restaurantDao = new RestaurantDao();
 
     private String getCurrentRole() {
@@ -34,7 +34,9 @@ public class OrderServlet extends HttpServlet {
                 .findFirst().orElse("");
     }
 
-    private boolean isAdmin() { return "ADMIN".equals(getCurrentRole()); }
+    private boolean isAdmin() {
+        return "ADMIN".equals(getCurrentRole());
+    }
 
     private String getCurrentUsername() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -53,9 +55,10 @@ public class OrderServlet extends HttpServlet {
     private Restaurant getCurrentRestaurant() {
         Restaurant r = (Restaurant) getServletContext().getAttribute(CTX_RESTAURANT_KEY);
         if (r == null) {
-            try { r = restaurantDao.getOrCreateDefault(); }
-            catch (Exception e) {
-                r = new Restaurant(1, "Gauhar Restaurant",
+            try {
+                r = restaurantDao.getOrCreateDefault();
+            } catch (Exception e) {
+                r = new Restaurant(1, "Restaurant",
                         "Astana, Kabanbay Batyr 53", "+7 700 000 00 00", "10:00 - 23:00", "Cafe & Restaurant");
             }
             getServletContext().setAttribute(CTX_RESTAURANT_KEY, r);
@@ -72,7 +75,7 @@ public class OrderServlet extends HttpServlet {
             throws ServletException, IOException {
 
         setRestaurant(req);
-        req.setAttribute("menuItems", menuItemDao.findAll());
+        req.setAttribute("menu", menuItemDao.findAll());
 
         if (isAdmin()) {
             req.setAttribute("orders", orderDao.findAll());
@@ -93,9 +96,13 @@ public class OrderServlet extends HttpServlet {
             String customer = isAdmin()
                     ? safe(req.getParameter("customerName"))
                     : getCurrentUsername();
+
             String phone = safe(req.getParameter("phone"));
             int itemId = parseInt(req.getParameter("menuItemId"), -1);
-            int qty    = parseInt(req.getParameter("quantity"), -1);
+            int qty = parseInt(req.getParameter("quantity"), -1);
+
+            String[] toppingsArr = req.getParameterValues("toppings");
+            String toppings = toppingsArr == null ? "" : String.join(", ", toppingsArr);
 
             if (customer.isEmpty() || itemId <= 0 || qty <= 0) {
                 req.getSession().setAttribute("flash_error", "❌ Заполни форму");
@@ -104,7 +111,7 @@ public class OrderServlet extends HttpServlet {
             }
 
             try {
-                orderDao.createOrder(customer, phone, itemId, qty);
+                orderDao.createOrder(null, null, customer, phone, itemId, qty, toppings);
                 req.getSession().setAttribute("flash_success", "✅ Заказ оформлен");
             } catch (Exception e) {
                 req.getSession().setAttribute("flash_error", "❌ " + e.getMessage());
@@ -136,7 +143,11 @@ public class OrderServlet extends HttpServlet {
     }
 
     private static int parseInt(String s, int def) {
-        try { return Integer.parseInt(s); } catch (Exception e) { return def; }
+        try {
+            return Integer.parseInt(s);
+        } catch (Exception e) {
+            return def;
+        }
     }
 
     private static String safe(String s) {

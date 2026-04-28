@@ -4,26 +4,29 @@
 <%@ page import="org.springframework.security.core.context.SecurityContextHolder" %>
 <%@ page import="org.springframework.security.core.GrantedAuthority" %>
 <%
-    String ctx = request.getContextPath();
-
     Restaurant r = (Restaurant) request.getAttribute("restaurant");
+    if (r == null) {
+        r = new Restaurant();
+    }
 
     Authentication _auth = SecurityContextHolder.getContext().getAuthentication();
     String currentRole = (_auth != null && _auth.isAuthenticated())
             ? _auth.getAuthorities().stream()
-                .map(GrantedAuthority::getAuthority)
-                .filter(a -> a.startsWith("ROLE_"))
-                .map(a -> a.substring(5))
-                .findFirst().orElse("")
+            .map(GrantedAuthority::getAuthority)
+            .filter(a -> a.startsWith("ROLE_"))
+            .map(a -> a.substring(5))
+            .findFirst().orElse("")
             : "";
     boolean isAdmin  = "ADMIN".equals(currentRole);
-    boolean isClient = "CLIENT".equals(currentRole);
     String userName = (_auth != null) ? _auth.getName() : "Пользователь";
 
-    String name      = (r != null && r.getName()      != null && !r.getName().isBlank()) ? r.getName()      : "Gauhar Restaurant";
-    String address   = (r != null && r.getAddress()   != null) ? r.getAddress()   : "Astana, Kabanbay Batyr 53";
-    String phone     = (r != null && r.getPhone()     != null) ? r.getPhone()     : "+7 700 000 00 00";
-    String workHours = (r != null && r.getWorkHours() != null) ? r.getWorkHours() : "10:00 – 23:00";
+    String name      = (r.getName()      != null && !r.getName().isBlank())      ? r.getName()      : "🎍 Ресторан";
+    String address   = (r.getAddress()   != null && !r.getAddress().isBlank())   ? r.getAddress()   : "Astana, Kabanbay Batyr 53";
+    String phone     = (r.getPhone()     != null && !r.getPhone().isBlank())     ? r.getPhone()     : "+7 700 000 00 00";
+    String workHours = (r.getWorkHours() != null && !r.getWorkHours().isBlank()) ? r.getWorkHours() : "10:00 – 23:00";
+
+    request.setAttribute("navRestaurantName", name);
+    request.setAttribute("navActivePage", "home");
 %>
 <!doctype html>
 <html lang="ru">
@@ -31,24 +34,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%= name %></title>
-    <link rel="stylesheet" href="<%= ctx %>/styles.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles.css">
 </head>
 <body>
 
-<div class="navbar">
-    <div class="nav-inner">
-        <a class="brand" href="<%= ctx %>/home">🎍 <%= name %></a>
-        <div class="nav-links">
-            <a class="nav-link" href="<%= ctx %>/home">Главная</a>            <a class="nav-link" href="<%= ctx %>/menu-items">Меню</a>
-            <a class="nav-link" href="<%= ctx %>/orders"><%= isAdmin ? "Заказы" : "Сделать заказ" %></a>
-            <a class="nav-link" href="<%= ctx %>/kitchen">Кухня</a>
-            <% if (isAdmin) { %>
-            <a class="nav-link" href="<%= ctx %>/restaurant">О ресторане</a>
-            <% } %>
-            <a class="nav-link" href="<%= ctx %>/logout">Выход</a>
-        </div>
-    </div>
-</div>
+<jsp:include page="includes/navbar.jsp" />
 
 <div class="home-hero">
     <div class="hero-logo">🎍</div>
@@ -66,11 +56,12 @@
 
     <div class="hero-btns">
         <% if (isAdmin) { %>
-        <a class="btn primary large" href="<%= ctx %>/menu-items">📋 Управлять меню</a>
-        <a class="btn ghost large" href="<%= ctx %>/orders">🧾 Управлять заказами</a>
+        <a class="btn primary large" href="${pageContext.request.contextPath}/menu-items">📋 Управлять меню</a>
+        <a class="btn ghost large" href="${pageContext.request.contextPath}/orders">🧾 Управлять заказами</a>
         <% } else { %>
-        <a class="btn primary large" href="<%= ctx %>/menu-items">📋 Посмотреть меню</a>
-        <a class="btn ghost large" href="<%= ctx %>/orders">🧾 Сделать заказ</a>
+        <a class="btn primary large" href="${pageContext.request.contextPath}/menu-items">🍕 Перейти в меню</a>
+        <a class="btn ghost large" href="${pageContext.request.contextPath}/cart">🛒 Моя корзина</a>
+        <a class="btn ghost large" href="${pageContext.request.contextPath}/profile">👤 Мой профиль</a>
         <% } %>
     </div>
 
@@ -104,7 +95,7 @@
             <div>
                 <div class="info-label">Кухня</div>
                 <div class="info-value">
-                    <a class="link" href="<%= ctx %>/kitchen">Табло кухни</a>
+                    <a class="link" href="${pageContext.request.contextPath}/kitchen">Табло кухни</a>
                 </div>
             </div>
         </div>

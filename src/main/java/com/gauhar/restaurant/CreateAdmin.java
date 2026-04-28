@@ -7,7 +7,7 @@ public class CreateAdmin {
     public static void main(String[] args) throws Exception {
         String url  = "jdbc:sqlserver://localhost:1433;databaseName=restaurant_dbb;encrypt=false;trustServerCertificate=true";
         String user = "sa";
-        String pass = "ыф"; // ыф
+        String pass = "sa";
 
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 

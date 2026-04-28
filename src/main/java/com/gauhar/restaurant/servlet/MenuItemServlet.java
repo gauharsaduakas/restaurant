@@ -16,14 +16,14 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import java.io.IOException;
 import java.util.Optional;
 
-@WebServlet(urlPatterns = {
-        "/menu-items",
-        "/menu-items/new",
-        "/menu-items/edit",
-        "/menu-items/update",
-        "/menu-items/delete",
-        "/menu-items/toggle"
-})
+//@WebServlet(urlPatterns = {
+//        "/menu-items",
+//        "/menu-items/new",
+//        "/menu-items/edit",
+//        "/menu-items/update",
+//        "/menu-items/delete",
+//        "/menu-items/toggle"
+//})
 public class MenuItemServlet extends HttpServlet {
 
     private static final String CTX_RESTAURANT_KEY = "restaurant";
@@ -73,7 +73,7 @@ public class MenuItemServlet extends HttpServlet {
             } catch (Exception e) {
                 r = new Restaurant(
                         1,
-                        "Gauhar Restaurant",
+                        " Restaurant",
                         "Astana, Kabanbay Batyr 53",
                         "+7 700 000 00 00",
                         "10:00 - 23:00",

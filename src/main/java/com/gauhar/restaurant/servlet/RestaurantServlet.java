@@ -11,7 +11,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.io.IOException;
 
-@WebServlet("/restaurant")
+//@WebServlet("/restaurant")
 public class RestaurantServlet extends HttpServlet {
 
     private static final String CTX_RESTAURANT_KEY = "restaurant";
@@ -44,7 +44,7 @@ public class RestaurantServlet extends HttpServlet {
         if (r == null) {
             try { r = restaurantDao.getOrCreateDefault(); }
             catch (Exception e) {
-                r = new Restaurant(1, "Gauhar Restaurant",
+                r = new Restaurant(1, "Restaurant",
                         "Astana, Kabanbay Batyr 53", "+7 700 000 00 00", "10:00 - 23:00", "Best burgers, pizzas and coffee");
             }
             getServletContext().setAttribute(CTX_RESTAURANT_KEY, r);

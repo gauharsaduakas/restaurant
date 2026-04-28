@@ -1,7 +1,7 @@
 package com.gauhar.restaurant.dao;
 
 import com.gauhar.restaurant.db.Db;
-import com.gauhar.restaurant.model.User;
+import com.gauhar.restaurant.entity.User;
 
 import java.sql.*;
 

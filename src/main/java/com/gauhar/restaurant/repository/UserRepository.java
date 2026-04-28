@@ -1,8 +1,7 @@
 package com.gauhar.restaurant.repository;
 
-import com.gauhar.restaurant.model.User;
+import com.gauhar.restaurant.entity.User;  // ← ИСПРАВЛЕНО
 import org.springframework.data.jpa.repository.JpaRepository;
-
 import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Long> {

@@ -6,8 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PageController {
 
-    @GetMapping("/")
-    public String root() {
-        return "redirect:/home";
+    // ✅ Spring Security handles /login via formLogin(), so no need to define it here
+
+    @GetMapping("/access-denied")
+    public String accessDenied() {
+        return "access-denied"; // ✅ JSP view name without forward
     }
 }
