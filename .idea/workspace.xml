@@ -15,6 +15,7 @@
       <change afterPath="$PROJECT_DIR$/CHECK_USERS_TABLE.sql" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/COMPLETION_REPORT.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DEPLOYMENT.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FINAL_CHECKLIST.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/FIX_AMBIGUOUS_MAPPING.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/FIX_NATIVE_ACCESS_WARNING.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/IDE_SETUP.md" afterDir="false" />
@@ -78,6 +79,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/images/burger.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/images/coffee.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/images/cola.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/images/hero-preview.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/images/logo.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/images/pastas.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/images/pizza.jpg" afterDir="false" />
@@ -458,7 +460,7 @@
       <workItem from="1777220593693" duration="3300000" />
       <workItem from="1777224822089" duration="842000" />
       <workItem from="1777394545067" duration="1931000" />
-      <workItem from="1777396723117" duration="14630000" />
+      <workItem from="1777396723117" duration="15044000" />
     </task>
     <servers />
   </component>
